@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "G:/C_C++/linux_for_yy2020/include/GloableDefine.cpp" "G:/C_C++/linux_for_yy2020/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/include/GloableDefine.cpp.obj"
-  "G:/C_C++/linux_for_yy2020/main.cpp" "G:/C_C++/linux_for_yy2020/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/main.cpp.obj"
-  "G:/C_C++/linux_for_yy2020/src/FileHander.cpp" "G:/C_C++/linux_for_yy2020/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj"
+  "/Users/yangyang/Desktop/linuxHomeWork/include/GloableDefine.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/include/GloableDefine.cpp.o"
+  "/Users/yangyang/Desktop/linuxHomeWork/main.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/main.cpp.o"
+  "/Users/yangyang/Desktop/linuxHomeWork/src/FileHander.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

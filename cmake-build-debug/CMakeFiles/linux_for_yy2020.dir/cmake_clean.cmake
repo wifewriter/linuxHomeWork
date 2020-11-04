@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/linux_for_yy2020.dir/include/GloableDefine.cpp.obj"
-  "CMakeFiles/linux_for_yy2020.dir/main.cpp.obj"
-  "CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj"
-  "liblinux_for_yy2020.dll.a"
-  "linux_for_yy2020.exe"
-  "linux_for_yy2020.exe.manifest"
+  "CMakeFiles/linux_for_yy2020.dir/include/GloableDefine.cpp.o"
+  "CMakeFiles/linux_for_yy2020.dir/main.cpp.o"
+  "CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.o"
+  "linux_for_yy2020"
   "linux_for_yy2020.pdb"
 )
 

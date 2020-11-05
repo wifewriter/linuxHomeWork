@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/yangyang/Desktop/linuxHomeWork/include/GloableDefine.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/include/GloableDefine.cpp.o"
-  "/Users/yangyang/Desktop/linuxHomeWork/main.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/main.cpp.o"
-  "/Users/yangyang/Desktop/linuxHomeWork/src/FileHander.cpp" "/Users/yangyang/Desktop/linuxHomeWork/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.o"
+  "G:/C_C++/linux_for_yy2020/src/main.cpp" "G:/C_C++/linux_for_yy2020/cmake-build-debug/CMakeFiles/linux_for_yy2020.dir/src/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  ".././include"
   )
 
 # Targets to which this target links.

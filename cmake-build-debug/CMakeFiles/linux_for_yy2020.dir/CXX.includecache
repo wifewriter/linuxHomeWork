@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/FileHander.h
+iostream
+-
+string
+-
+vector
+-
+
+../include/GloableDefine.h
+
+G:/C_C++/linux_for_yy2020/main.cpp
+iostream
+-
+fcntl.h
+-
+FileHander.h
+G:/C_C++/linux_for_yy2020/FileHander.h
+GloableDefine.h
+G:/C_C++/linux_for_yy2020/GloableDefine.h
+process.h
+-
+

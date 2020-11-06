@@ -5,7 +5,7 @@
 		<Option title="linux_for_yy2020"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\src\;"/>
+		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="G:/C_C++/linux_for_yy2020/cmake-build-debug"/>
@@ -82,17 +82,14 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="G:/C_C++/linux_for_yy2020/src/main.cpp">
+		<Unit filename="G:/C_C++/linux_for_yy2020/main.cpp">
+			<Option target="linux_for_yy2020"/>
+		</Unit>
+		<Unit filename="G:/C_C++/linux_for_yy2020/src/FileHander.cpp">
 			<Option target="linux_for_yy2020"/>
 		</Unit>
 		<Unit filename="G:/C_C++/linux_for_yy2020/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="G:/C_C++/linux_for_yy2020/include/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\include\"/>
-		</Unit>
-		<Unit filename="G:/C_C++/linux_for_yy2020/src/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\src\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

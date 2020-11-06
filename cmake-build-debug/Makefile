@@ -122,32 +122,59 @@ linux_for_yy2020/fast:
 	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/build
 .PHONY : linux_for_yy2020/fast
 
-src/main.obj: src/main.cpp.obj
+main.obj: main.cpp.obj
 
-.PHONY : src/main.obj
+.PHONY : main.obj
 
 # target to build an object file
-src/main.cpp.obj:
-	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/main.cpp.obj
-.PHONY : src/main.cpp.obj
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-src/main.i: src/main.cpp.i
+main.i: main.cpp.i
 
-.PHONY : src/main.i
+.PHONY : main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-src/main.s: src/main.cpp.s
+main.s: main.cpp.s
 
-.PHONY : src/main.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+src/FileHander.obj: src/FileHander.cpp.obj
+
+.PHONY : src/FileHander.obj
+
+# target to build an object file
+src/FileHander.cpp.obj:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj
+.PHONY : src/FileHander.cpp.obj
+
+src/FileHander.i: src/FileHander.cpp.i
+
+.PHONY : src/FileHander.i
+
+# target to preprocess a source file
+src/FileHander.cpp.i:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.i
+.PHONY : src/FileHander.cpp.i
+
+src/FileHander.s: src/FileHander.cpp.s
+
+.PHONY : src/FileHander.s
+
+# target to generate assembly for a file
+src/FileHander.cpp.s:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.s
+.PHONY : src/FileHander.cpp.s
 
 # Help Target
 help:
@@ -158,9 +185,12 @@ help:
 	@echo ... linux_for_yy2020
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
+	@echo ... src/FileHander.obj
+	@echo ... src/FileHander.i
+	@echo ... src/FileHander.s
 .PHONY : help
 
 

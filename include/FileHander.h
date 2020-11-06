@@ -26,11 +26,15 @@ public:
     int judgeFileExist();
 //    用随机数据进行填充
     int importRandomData();
-//  获取当前所有文件
-
+//  判断当前系统是否有文件打开 true为空，false非空
+    bool judgeAddOrNot();
+//
 private:
     int f_fd;
     int index_fd;
-    void getFiles(char* ,char*);
+    void getFiles(std::string path, std::vector<std::string> &files);
+//    当前表数目计数
+    unsigned int Sum_File = 0;
+    std::string tempFileName;
 };
 #endif //LINUX_FOR_YY2020_FILEHANDER_H

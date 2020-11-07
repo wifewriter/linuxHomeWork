@@ -6,13 +6,13 @@
 
 using namespace std;
 int main() {
-    cout<< "linux 2020 作业 202021230110 杨洋"<< endl;
+    cout<< "linux 2020 homework 202021230110 yangyang"<< endl;
     File_Hander* temp_File = new File_Hander;
     bool system_Flag = true;
     char temp_Cin;
     if(temp_File->judgeAddOrNot()){
 //        没有任何文件
-        cout<<"没有文件"<<endl;
+        cout<<"No Files"<<endl;
         return 0;
     }
     else{
@@ -26,11 +26,42 @@ int main() {
             delete temp_File;
         }
         while (system_Flag) {
-            system("cls");
-
+//            清屏
+//            system("cls");
+//          增
+            cout<<"a-------InsertData"<<endl;
+//            删
+            cout<<"b-------DeleteData"<<endl;
+//            改
+            cout<<"c-------UpdateData"<<endl;
+//            查
+            cout<<"d-------SearchData"<<endl;
+//          查看当前数据
+            cout<<"e-------ShowData"<<endl;
+            cin>>temp_Cin;
+            if(temp_Cin =='a' ||temp_Cin =='b' ||temp_Cin =='c' ||temp_Cin =='d'||temp_Cin =='e'){
+                switch(temp_Cin){
+                    case 'a':
+                        if(temp_File->appendArowToFile())
+                            continue;
+                        break;
+                    case 'b':
+                        temp_File->deleteArowToFile();
+                        break;
+                    case 'c':
+                        temp_File->alterArowToFile();
+                        break;
+                    case 'd':
+                        temp_File->searchFileCondition();
+                        break;
+                    case 'e':
+                        temp_File->showCurrentTableData();
+                        break;
+                    default:
+                        continue;
+                }
+            }
         }
         return 0;
     }
-
-
 }

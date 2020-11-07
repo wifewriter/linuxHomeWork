@@ -88,6 +88,9 @@
 		<Unit filename="G:/C_C++/linux_for_yy2020/src/FileHander.cpp">
 			<Option target="linux_for_yy2020"/>
 		</Unit>
+		<Unit filename="G:/C_C++/linux_for_yy2020/src/commonHandler.cpp">
+			<Option target="linux_for_yy2020"/>
+		</Unit>
 		<Unit filename="G:/C_C++/linux_for_yy2020/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

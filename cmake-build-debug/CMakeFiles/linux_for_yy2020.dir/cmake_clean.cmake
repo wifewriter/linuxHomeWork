@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/linux_for_yy2020.dir/main.cpp.obj"
   "CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj"
+  "CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj"
   "liblinux_for_yy2020.dll.a"
   "linux_for_yy2020.exe"
   "linux_for_yy2020.exe.manifest"

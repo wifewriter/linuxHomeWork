@@ -6,25 +6,47 @@
 
 #IncludeRegexTransform: 
 
-../include/FileHander.h
+../include/GloableDefine.h
+
+../include/commonHandler.h
+string
+-
+
+G:/C_C++/linux_for_yy2020/include/FileHander.h
 iostream
 -
 string
 -
 vector
 -
+GloableDefine.h
+-
 
-../include/GloableDefine.h
+G:/C_C++/linux_for_yy2020/include/GloableDefine.h
 
-G:/C_C++/linux_for_yy2020/main.cpp
+G:/C_C++/linux_for_yy2020/src/FileHander.cpp
+../include/FileHander.h
+G:/C_C++/linux_for_yy2020/include/FileHander.h
 iostream
+-
+io.h
+-
+vector
+-
+../include/GloableDefine.h
+G:/C_C++/linux_for_yy2020/include/GloableDefine.h
+string
 -
 fcntl.h
 -
-FileHander.h
-G:/C_C++/linux_for_yy2020/FileHander.h
-GloableDefine.h
-G:/C_C++/linux_for_yy2020/GloableDefine.h
-process.h
+sys/stat.h
+-
+time.h
+-
+stdlib.h
+-
+commonHandler.h
+G:/C_C++/linux_for_yy2020/src/commonHandler.h
+unistd.h
 -
 

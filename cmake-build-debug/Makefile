@@ -176,6 +176,33 @@ src/FileHander.cpp.s:
 	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.s
 .PHONY : src/FileHander.cpp.s
 
+src/commonHandler.obj: src/commonHandler.cpp.obj
+
+.PHONY : src/commonHandler.obj
+
+# target to build an object file
+src/commonHandler.cpp.obj:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj
+.PHONY : src/commonHandler.cpp.obj
+
+src/commonHandler.i: src/commonHandler.cpp.i
+
+.PHONY : src/commonHandler.i
+
+# target to preprocess a source file
+src/commonHandler.cpp.i:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.i
+.PHONY : src/commonHandler.cpp.i
+
+src/commonHandler.s: src/commonHandler.cpp.s
+
+.PHONY : src/commonHandler.s
+
+# target to generate assembly for a file
+src/commonHandler.cpp.s:
+	$(MAKE) -f CMakeFiles\linux_for_yy2020.dir\build.make CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.s
+.PHONY : src/commonHandler.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +218,9 @@ help:
 	@echo ... src/FileHander.obj
 	@echo ... src/FileHander.i
 	@echo ... src/FileHander.s
+	@echo ... src/commonHandler.obj
+	@echo ... src/commonHandler.i
+	@echo ... src/commonHandler.s
 .PHONY : help
 
 

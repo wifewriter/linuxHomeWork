@@ -6,6 +6,11 @@ CMakeFiles/linux_for_yy2020.dir/main.cpp.obj
  ../include/GloableDefine.h
  G:/C_C++/linux_for_yy2020/main.cpp
 CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj
+ ../include/GloableDefine.h
+ ../include/commonHandler.h
  G:/C_C++/linux_for_yy2020/include/FileHander.h
  G:/C_C++/linux_for_yy2020/include/GloableDefine.h
  G:/C_C++/linux_for_yy2020/src/FileHander.cpp
+CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj
+ ../include/commonHandler.h
+ G:/C_C++/linux_for_yy2020/src/commonHandler.cpp

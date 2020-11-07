@@ -7,4 +7,5 @@
 #define MAXROW 1000000
 #define ATTRIBUTES 100
 #define FILEPATH "../tableFile"
+#define tableFilePath "../tableFile/test1"
 #endif //LINUX_FOR_YY2020_GLOABLEDEFINE_H

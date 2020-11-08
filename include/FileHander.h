@@ -29,17 +29,24 @@ public:
     void importRandomData();
 //  判断当前系统是否有文件打开 true为空，false非空
     bool judgeAddOrNot();
-//
+//  获取当前文件行数
+    int getLineNum();
 private:
     int f_fd = -1;
-    static int index_fd;
+    int index_fd;
     void getFiles(std::string path, std::vector<std::string> &files);
 //    当前表数目计数
     unsigned int Sum_File = 0;
+//    存放当前文件名
     std::string tempFileName;
-    //    创立索引文件
+//    创立索引文件
     void creatIndexFile();
-    char tempRandomData[ATTRIBUTES];
+//    存放一行的字节数
+    int rowOfbyte;
+//    存放当前一行的随机数
+    char tempRandomData[2*ATTRIBUTES];
+//    存放当前打开文件路径
+    std::string temp_Path;
 };
 
 #endif //LINUX_FOR_YY2020_FILEHANDER_H

@@ -46,7 +46,8 @@ int main() {
                             continue;
                         break;
                     case 'b':
-                        temp_File->deleteArowToFile();
+                        if(temp_File->deleteArowToFile())
+                            continue;
                         break;
                     case 'c':
                         temp_File->alterArowToFile();

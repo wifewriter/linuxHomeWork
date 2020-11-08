@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(linux_for_yy2020)
 
 MESSAGE("project linux_for_yy2020")
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 #当前是DEBUG模式
 set(CMAKE_BUILD_TYPE DEBUG)
 #引入所有需编译的源文件

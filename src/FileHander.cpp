@@ -3,7 +3,15 @@
 //
 #include "../include/FileHander.h"
 #include <iostream>
+
+#ifdef __WIN32__
 #include <io.h>
+#endif
+
+#ifdef __clang__
+#include <dirent.h>
+#endif
+
 #include <vector>
 #include "../include/GloableDefine.h"
 #include <string>
@@ -64,6 +72,22 @@ File_Hander::~File_Hander() {
     close(f_fd);
     cout<<"File_Hander class Exit!"<<endl;
 }
+
+#ifdef __clang__
+//根据当前系统来判断是否该引入io.h这个头文件，linux和unix没有io.h头文件。
+void File_Hander::getFiles(string path,vector<string>& filenames)
+{
+    DIR *pDir;
+    struct dirent* ptr;
+    if(!(pDir = opendir(path.c_str())))
+        return;
+    while((ptr = readdir(pDir))!=0) {
+        if (strcmp(ptr->d_name, ".") != 0 && strcmp(ptr->d_name, "..") != 0)
+            filenames.push_back(path + "/" + ptr->d_name);
+    }
+    closedir(pDir);
+}
+#else
 void File_Hander::getFiles(string path , vector<string> &files){
     long hFile = 0;
     struct _finddata_t fileinfo;
@@ -82,6 +106,8 @@ void File_Hander::getFiles(string path , vector<string> &files){
         _findclose(hFile);
     }
 }
+#endif
+
 int File_Hander::appendArowToFile() {
     lseek(f_fd,0,SEEK_END);
     char temp_Cin;
@@ -157,6 +183,7 @@ void File_Hander::creatIndexFile() {
             close(temp_Index_fd);
         }
     }
+
 }
 
 int File_Hander::deleteArowToFile() {

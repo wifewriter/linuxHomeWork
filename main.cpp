@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "FileHander.h"
 #include "GloableDefine.h"
-#include <process.h>
+//#include <process.h>
 
 using namespace std;
 int main() {

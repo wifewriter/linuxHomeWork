@@ -3,6 +3,7 @@
 
 CMakeFiles/linux_for_yy2020.dir/main.cpp.obj: ../include/FileHander.h
 CMakeFiles/linux_for_yy2020.dir/main.cpp.obj: ../include/GloableDefine.h
+CMakeFiles/linux_for_yy2020.dir/main.cpp.obj: ../include/commonHandler.h
 CMakeFiles/linux_for_yy2020.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj: ../include/GloableDefine.h
@@ -11,6 +12,8 @@ CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj: ../include/FileHander.h
 CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj: ../include/GloableDefine.h
 CMakeFiles/linux_for_yy2020.dir/src/FileHander.cpp.obj: ../src/FileHander.cpp
 
+CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj: ../include/FileHander.h
+CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj: ../include/GloableDefine.h
 CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj: ../include/commonHandler.h
 CMakeFiles/linux_for_yy2020.dir/src/commonHandler.cpp.obj: ../src/commonHandler.cpp
 

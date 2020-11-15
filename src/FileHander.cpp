@@ -4,10 +4,9 @@
 #include "../include/FileHander.h"
 #include <iostream>
 
-#ifdef __WIN32__
+#ifdef WIN64
 #include <io.h>
 #endif
-
 #ifdef __clang__
 #include <dirent.h>
 #endif
@@ -24,7 +23,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fstream>
-
 using namespace std;
 
 File_Hander::File_Hander() {
@@ -42,6 +40,7 @@ File_Hander::File_Hander() {
     temp_Path.append("/");
 //    初始化一个存放随机100条属性的数组
 //    this->tempRandomData = new char[ATTRIBUTES];
+    pthread_t ptIndex;
     if (Sum_File > 0) {
         for (int i = 0; i < this->Sum_File; ++i) {
             cout << files[i].c_str() << endl;
@@ -54,7 +53,7 @@ File_Hander::File_Hander() {
         } else {
             cout << "Open Success!" << endl;
             cout<<"creating index Files"<<endl;
-            creatIndexFile();
+//            creatIndexFile();
         }
     } else {
         cout << "No table files are currently created!" << endl;
@@ -75,10 +74,12 @@ File_Hander::~File_Hander() {
     cout << "File_Hander class Exit!" << endl;
 }
 
-void File_Hander::getFiles(string path, vector<string> &files) {
+void * File_Hander::threadCreatIndexFile(void *) {
 
-#ifdef __clang__
+    return NULL;
+}
 //根据当前系统来判断是否该引入io.h这个头文件，linux和unix没有io.h头文件。
+#ifdef __clang__
 void File_Hander::getFiles(string path,vector<string>& filenames)
 {
     DIR *pDir;
@@ -182,22 +183,28 @@ void File_Hander::creatIndexFile() {
     temp_Index_FilePath.append("/index");
     char temp[3];
     int temp_Rows = getLineNum();
+    RowsTotal = temp_Rows;
+    char writeRowsTempChar[12];
+    string TableCreate = "\t";
+    string RowsChange = "\n";
     if (temp_Rows > 0) {
         int array[temp_Rows];
         int rowsIndex[temp_Rows];
         memset(array, 0, temp_Rows * sizeof(int));
         memset(temp,'\0',3);
         memset(rowsIndex,0,temp_Rows* sizeof(int));
-        for (int i = 0; i < ATTRIBUTES; ++i) {
+        memset(writeRowsTempChar,' ',11);
+        writeRowsTempChar[11] = '\n';
+        for (int i = 1; i < ATTRIBUTES+1; ++i) {
             if ((temp_Index_fd = open((temp_Index_FilePath + numToString(i)).c_str(), O_RDWR | O_CREAT,S_IRUSR | S_IWUSR)) < 0) {
                 perror("indexFile create Error");
             } else {
 //            打开文件成功,一下将每一个属性值放入数组缓存中。
-                lseek(f_fd,3*i,SEEK_SET);
+                lseek(f_fd,3*(i-1),SEEK_SET);
                 for (int j = 0; j < temp_Rows; ++j) {
                     if(read(f_fd,temp,3) > 0) {
                         array[j] = stringToNum((string)temp);
-                        lseek(f_fd,(j+1)*(rowOfbyte+1)+3*i,SEEK_SET);
+                        lseek(f_fd,(j+1)*(rowOfbyte+1)+3*(i-1),SEEK_SET);
                     } else{
                         continue;
                     }
@@ -206,16 +213,20 @@ void File_Hander::creatIndexFile() {
                 for (int k = 0; k < temp_Rows; ++k) {
                     rowsIndex[k] = k;
                 }
-
-
+                sortIndexArray(array,rowsIndex,temp_Rows);
+                for (int l = 0; l < temp_Rows; ++l) {
+                    strcpy(writeRowsTempChar,(numToString(rowsIndex[l])+TableCreate+numToString(array[l])).c_str());
+                    write(temp_Index_fd,writeRowsTempChar, sizeof(writeRowsTempChar));
+                    memset(writeRowsTempChar,' ',11);
+                }
                 close(temp_Index_fd);
             }
         }
+        cout<<"index Files already done !"<<endl;
     } else {
         cout << "empty file has no indexs！" << endl;
         return;
     }
-
 }
 
 int File_Hander::deleteArowToFile() {
@@ -279,7 +290,46 @@ int File_Hander::alterArowToFile() {
 }
 
 void File_Hander::searchFileCondition() {
-
+    cout << "please input the search condition,as 1,0,50 (Attribute 1 ,value [0 50])"<<endl;
+    string inputParam;
+    cin >> inputParam;
+    vector<string> param = splitstring(inputParam,',');
+    int param1,param2,param3;
+    param1 = stringToNum(param[0]);
+    param2 = stringToNum(param[1]);
+    param3 = stringToNum(param[2]);
+    string stringtempReadFile;
+    vector<string> vectorStringReadFileParam;
+    char chartempReadFile[13];
+    char buffer[rowOfbyte+1];
+    memset(buffer,'\0',rowOfbyte+1);
+    string tempIndexPath = INDEXFILEPATH;
+    tempIndexPath.append("/index");
+    int temp_IndexRows = 0;
+    if((this->index_fd = open((tempIndexPath+param[0]).c_str() , O_RDONLY)) < 0){
+        perror("index file open error!");
+        return;
+    } else{
+        lseek(index_fd,0,SEEK_SET);
+        for (int i = 0; i < RowsTotal; ++i) {
+            read(index_fd,chartempReadFile,13);
+            stringtempReadFile = chartempReadFile;
+            vectorStringReadFileParam = splitstring(stringtempReadFile,'\t');
+            if(stringToNum(vectorStringReadFileParam[1]) > param2 && stringToNum(vectorStringReadFileParam[1]) < param3){
+//                表明当前行的属性值在输入的范围内
+                lseek(f_fd,stringToNum(vectorStringReadFileParam[0])*(rowOfbyte+1),SEEK_SET);
+                read(f_fd,buffer,rowOfbyte+1);
+                buffer[300] = '\0';
+                cout<<buffer;
+                temp_IndexRows++;
+                if(temp_IndexRows > 20){
+                    cout<<"too many results ,and just show 20 Rows !"<<endl;
+                    return;
+                }
+            }
+        }
+        cout << "search total "<<temp_IndexRows <<" Rows !"<<endl;
+    }
 }
 
 void File_Hander::showCurrentTableData() {

@@ -2,6 +2,8 @@
 #include <fcntl.h>
 #include "FileHander.h"
 #include "GloableDefine.h"
+#include <pthread.h>
+#include <commonHandler.h>
 //#include <process.h>
 
 using namespace std;
@@ -10,6 +12,8 @@ int main() {
     File_Hander* temp_File = new File_Hander;
     bool system_Flag = true;
     char temp_Cin;
+    pthread_t pthreadIndexFile;
+
     if(temp_File->judgeAddOrNot()){
 //        没有任何文件
         cout<<"No Files"<<endl;
@@ -17,6 +21,7 @@ int main() {
     }
     else{
         cout << "enter the system(y/n)?" << endl;
+
         cin>>temp_Cin;
         if (temp_Cin == 'y') {
             system_Flag = true;
@@ -29,6 +34,7 @@ int main() {
 //            清屏
 //            system("cls");
 //          增
+            pthread_create(&pthreadIndexFile,NULL,threadCreatIndexFile,(void*)temp_File);
             cout<<"a-------InsertData"<<endl;
 //            删
             cout<<"b-------DeleteData"<<endl;
@@ -39,18 +45,26 @@ int main() {
 //          查看当前数据
             cout<<"e-------ShowData"<<endl;
             cin>>temp_Cin;
+            pthread_join(pthreadIndexFile,NULL);
             if(temp_Cin =='a' ||temp_Cin =='b' ||temp_Cin =='c' ||temp_Cin =='d'||temp_Cin =='e'){
                 switch(temp_Cin){
                     case 'a':
-                        if(temp_File->appendArowToFile())
+                        if(temp_File->appendArowToFile()){
+
                             continue;
+                        }
                         break;
                     case 'b':
-                        if(temp_File->deleteArowToFile())
+                        if(temp_File->deleteArowToFile()){
+
                             continue;
+                        }
                         break;
                     case 'c':
-                        temp_File->alterArowToFile();
+                        if(temp_File->alterArowToFile()){
+
+                            continue;
+                        }
                         break;
                     case 'd':
                         temp_File->searchFileCondition();

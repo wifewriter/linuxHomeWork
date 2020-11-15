@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/FileHander.h
-iostream
--
-string
--
-vector
--
-GloableDefine.h
--
-
 ../include/GloableDefine.h
 
 ../include/commonHandler.h
@@ -33,18 +23,6 @@ GloableDefine.h
 -
 
 G:/C_C++/linux_for_yy2020/include/GloableDefine.h
-
-G:/C_C++/linux_for_yy2020/main.cpp
-iostream
--
-fcntl.h
--
-FileHander.h
-G:/C_C++/linux_for_yy2020/FileHander.h
-GloableDefine.h
-G:/C_C++/linux_for_yy2020/GloableDefine.h
-process.h
--
 
 G:/C_C++/linux_for_yy2020/src/FileHander.cpp
 ../include/FileHander.h

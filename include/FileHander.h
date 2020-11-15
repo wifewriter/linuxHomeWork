@@ -29,8 +29,8 @@ public:
     void importRandomData();
 //  判断当前系统是否有文件打开 true为空，false非空
     bool judgeAddOrNot();
-//  获取当前文件行数
-    int getLineNum();
+//  获取当前文件行数,缺省获取当前打开的表文件行数
+    int getLineNum(std::string path = "");
 private:
     int f_fd = -1;
     int index_fd;
@@ -47,6 +47,7 @@ private:
     char tempRandomData[2*ATTRIBUTES];
 //    存放当前打开文件路径
     std::string temp_Path;
+//
 };
 
 #endif //LINUX_FOR_YY2020_FILEHANDER_H

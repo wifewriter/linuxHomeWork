@@ -17,3 +17,8 @@ int stringToNum(string s){
     ss>>num;
     return num;
 }
+int sortIndexArray(int a[],int b[],int length){
+    for (int i = 0; i < length; ++i) {
+        
+    }
+}
